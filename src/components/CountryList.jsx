@@ -14,7 +14,10 @@ function CountryList({ cities, isLoading }) {
   // Extract unique countries from cities
   const countries = cities.reduce((arr, city) => {
     if (!arr.map((el) => el.country).includes(city.country))
-      return [...arr, { country: city.country, emoji: city.emoji, id: city.id }];
+      return [
+        ...arr,
+        { country: city.country, emoji: city.emoji, id: city.id },
+      ];
     else return arr;
   }, []);
 
