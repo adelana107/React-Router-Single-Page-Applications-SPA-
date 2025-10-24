@@ -13,7 +13,9 @@ import { CitiesProvider } from "./contexts/CitiesContext"; // ✅ Import context
 
 function App() {
   return (
-    <CitiesProvider> {/* ✅ Corrected spelling: "CitiesProvider" not "CitiesProvier" */}
+    <CitiesProvider>
+      {" "}
+      {/* ✅ Corrected spelling: "CitiesProvider" not "CitiesProvier" */}
       <BrowserRouter>
         <Routes>
           <Route path="product" element={<Product />} />

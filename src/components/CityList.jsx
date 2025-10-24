@@ -2,13 +2,18 @@ import styles from "./CityList.module.css";
 import Spinner from "./Spinner";
 import CityItem from "./CityItem";
 import Message from "./Message";
+import { useCities } from "../contexts/CitiesContext"; // ✅ fixed import path
 
-function CityList({ cities, isLoading }) {
+function CityList() {
+  const { cities, isLoading } = useCities(); // ✅ use from context only
+
   if (isLoading) return <Spinner />;
+
   if (!cities.length)
     return (
-      <Message message="Add your first city by clicking a city on the city " />
+      <Message message="Add your first city by clicking a city on the map." />
     );
+
   return (
     <ul className={styles.cityList}>
       {cities.map((city) => (
