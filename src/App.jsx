@@ -15,7 +15,6 @@ function App() {
   return (
     <CitiesProvider>
       {" "}
-      {/* ✅ Corrected spelling: "CitiesProvider" not "CitiesProvier" */}
       <BrowserRouter>
         <Routes>
           <Route path="product" element={<Product />} />
