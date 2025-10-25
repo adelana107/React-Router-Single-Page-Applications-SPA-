@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   MapContainer,
   TileLayer,
@@ -11,27 +11,30 @@ import {
 import styles from "./Map.module.css";
 import "leaflet/dist/leaflet.css";
 import { useCities } from "../contexts/CitiesContext";
-import { useGeolocation } from "../hooks/useGeolocation"; // ✅ Correct import
+import { useGeolocation } from "../hooks/useGeolocation";
+import { useUrlPosition } from "../hooks/useUrlPosition";
+import Button from "./Button";
 
 function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
-  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+
   const {
     isLoading: isLoadingPosition,
     position: geoLocationPosition,
-    getPosition, 
+    getPosition,
   } = useGeolocation();
 
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
+  // ✅ You forgot this line before
+  const [mapLat, mapLng] = useUrlPosition();
 
+  // When URL changes (e.g. form?lat=6.5&lng=3.3)
   useEffect(() => {
-    if (lat && lng) setMapPosition([Number(lat), Number(lng)]);
-  }, [lat, lng]);
+    if (mapLat && mapLng) setMapPosition([Number(mapLat), Number(mapLng)]);
+  }, [mapLat, mapLng]);
 
-  // 👇 when the user's position updates, center the map
+  // When geolocation is obtained
   useEffect(() => {
     if (geoLocationPosition)
       setMapPosition([geoLocationPosition.lat, geoLocationPosition.lng]);
@@ -39,9 +42,9 @@ function Map() {
 
   return (
     <div className={styles.mapContainer}>
-      <button className={styles.addButton} onClick={getPosition}>
+      <Button type="position" onClick={getPosition}>
         {isLoadingPosition ? "Loading..." : "Use your Position"}
-      </button>
+      </Button>
 
       <MapContainer
         center={mapPosition}
