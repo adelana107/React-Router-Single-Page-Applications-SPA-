@@ -1,63 +1,15 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": "73930385"
-    },
-    {
-      "cityName": "Madrid",
+      "id": "d35d",
+      "cityName": "Moana",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": "17806751"
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443197"
-    },
-    {
-      "id": "cbd1",
-      "cityName": "Atapuerca",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-10-27T10:35:23.880Z",
-      "notes": "",
-      "position": {
-        "lat": "42.38589440666667",
-        "lng": "-3.49222239692669"
-      }
-    },
-    {
-      "id": "b545",
-      "cityName": "Torrejon el Rubio",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-10-27T10:50:28.825Z",
+      "date": "2025-10-27T11:58:42.089Z",
       "notes": "hey",
       "position": {
-        "lat": "39.80167142801936",
-        "lng": "-5.975676607018568"
+        "lat": "42.30464692413117",
+        "lng": "-8.744837938625418"
       }
     }
   ]
